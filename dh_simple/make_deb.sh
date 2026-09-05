@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# sudo apt install debhelper
 # https://github.com/FooBarWidget/debian-packaging-for-the-modern-developer/blob/master/tutorial-3/README.md
 
 # exit on error

@@ -15,4 +15,4 @@ curl http://localhost:8080
 echo
 
 separator "remove"
-sudo apt remove -y linuxtag
+sudo apt purge -y linuxtag

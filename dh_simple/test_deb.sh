@@ -14,4 +14,4 @@ separator "man"
 man linuxtag_2026 | tee
 
 separator "uninstall"
-sudo apt remove -y linuxtag
+sudo apt purge -y linuxtag

@@ -11,4 +11,4 @@ separator "version"
 linuxtag
 
 separator "uninstall"
-sudo apt remove -y linuxtag
+sudo apt purge -y linuxtag
