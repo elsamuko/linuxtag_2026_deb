@@ -47,7 +47,7 @@ linuxtag (1.0-1) unstable; urgency=medium
 
   * Initial release.
 
- -- Samuel <elsamuko@gmail.com>  Wed, 20 Aug 2025 15:32:02 +0200
+ -- Samuel <elsamuko@gmail.com>  $(date -R)
 EOF
 
 cat << EOF > linuxtag/debian/copyright
