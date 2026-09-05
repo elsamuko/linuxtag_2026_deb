@@ -4,26 +4,26 @@
 # exit on error
 set -e
 
-if [ -d linuxtag-2025 ]; then rm -rf linuxtag-2025; fi
-mkdir -p linuxtag-2025/debian
-cp linuxtag_2025.py linuxtag-2025/linuxtag_2025
+if [ -d linuxtag-2026 ]; then rm -rf linuxtag-2026; fi
+mkdir -p linuxtag-2026/debian
+cp linuxtag_2026.py linuxtag-2026/linuxtag_2026
 
-cat << EOF > linuxtag-2025/debian/install
-linuxtag_2025 usr/bin
+cat << EOF > linuxtag-2026/debian/install
+linuxtag_2026 usr/bin
 EOF
 
-cat << EOF > linuxtag-2025/debian/copyright
+cat << EOF > linuxtag-2026/debian/copyright
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Copyright 2025 Samuel <elsamuko@gmail.com>
+Copyright 2026 Samuel <elsamuko@gmail.com>
 EOF
 
 # https://www.debian.org/doc/debian-policy/ch-controlfields.html
-cat << EOF > linuxtag-2025/debian/control
+cat << EOF > linuxtag-2026/debian/control
 Source: linuxtag
 Section: misc
 Priority: optional
 Maintainer: Samuel <elsamuko@gmail.com>
-Build-Depends: debhelper (>= 9)
+Build-Depends: debhelper-compat (= 13)
 
 Package: linuxtag
 Architecture: all
@@ -32,14 +32,18 @@ Description: Example package for Linuxtag
  Some more details...
 EOF
 
-cp linuxtag.service linuxtag-2025/debian
-cp rules linuxtag-2025/debian
+cp linuxtag.service linuxtag-2026/debian
+cp rules linuxtag-2026/debian
 # https://manpages.debian.org/testing/debhelper/debhelper-compat-upgrade-checklist.7.en.html
-echo 12 > linuxtag-2025/debian/compat
-cp ../simple/CHANGELOG linuxtag-2025/debian/changelog
-echo "debian/linuxtag.1" > linuxtag-2025/debian/linuxtag.manpages
-ronn --roff --pipe --name=linuxtag ../simple/linuxtag_2025.1.ronn > linuxtag-2025/debian/linuxtag.1
+cp ../simple/CHANGELOG linuxtag-2026/debian/changelog
+echo "debian/linuxtag.1" > linuxtag-2026/debian/linuxtag.manpages
+ronn --roff --pipe --name=linuxtag ../simple/linuxtag_2026.1.ronn > linuxtag-2026/debian/linuxtag.1
 
-cd linuxtag-2025
-dpkg-buildpackage -b --no-sign
-lintian ../linuxtag_1.0-1_all.deb
+(
+    cd linuxtag-2026
+    dpkg-buildpackage -b --no-sign
+    lintian ../linuxtag_1.0-1_all.deb
+)
+
+dpkg-deb --info linuxtag*.deb
+dpkg-deb --contents linuxtag*.deb
