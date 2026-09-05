@@ -5,7 +5,7 @@ function separator {
 }
 
 separator "reinstall"
-sudo apt reinstall -y ./linuxtag-2025.deb
+sudo apt reinstall -y ./linuxtag-2026.deb
 
 separator "check service"
 sudo systemctl status linuxtag.service

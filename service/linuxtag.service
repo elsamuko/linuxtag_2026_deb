@@ -3,7 +3,7 @@ Description=Linuxtag service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/linuxtag_2025
+ExecStart=/usr/bin/linuxtag_2026
 Restart=always
 
 [Install]
