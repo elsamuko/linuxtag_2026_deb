@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
 
 if __name__ == "__main__":
-    print("Hello Linuxtag 2025 with debhelper")
+    print("Hello Linuxtag 2026 with debhelper")
