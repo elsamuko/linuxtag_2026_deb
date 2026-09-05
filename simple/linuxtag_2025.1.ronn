@@ -1,7 +1,0 @@
-# linuxtag_2025(1) — Linuxtag demo manpage
-
-## SYNOPSIS
-`linuxtag_2025`
-
-## DESCRIPTION
-Demo for Linuxtag

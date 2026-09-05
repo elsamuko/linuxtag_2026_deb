@@ -1,0 +1,7 @@
+# linuxtag_2026(1) — Linuxtag demo manpage
+
+## SYNOPSIS
+`linuxtag_2026`
+
+## DESCRIPTION
+Demo for Linuxtag

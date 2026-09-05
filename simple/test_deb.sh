@@ -5,13 +5,13 @@ function separator {
 }
 
 separator "reinstall"
-sudo apt reinstall -y ./linuxtag-2025.deb
+sudo apt reinstall -y ./linuxtag-2026.deb
 
 separator "version"
-linuxtag_2025 --version
+linuxtag_2026 --version
 
 separator "man"
-man linuxtag_2025 | tee
+man linuxtag_2026 | tee
 
 separator "uninstall"
 sudo apt remove -y linuxtag
