@@ -6,7 +6,7 @@
 
 !CHANGELOG
 !*.py
-!*.sp
+!*.sh
 !*.md
 !*.ronn
 
