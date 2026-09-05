@@ -10,7 +10,7 @@ fi
 
 mkdir -p linuxtag/debian
 
-cp linuxtag_2025.py linuxtag/linuxtag_2025.py
+cp linuxtag_2026.py linuxtag/linuxtag_2026.py
 
 cat << EOF > linuxtag/pyproject.toml
 [build-system]
@@ -23,11 +23,11 @@ version = "1.0"
 requires-python = ">=3.8"
 
 [project.scripts]
-linuxtag_2025 = "linuxtag_2025:main"
+linuxtag_2026 = "linuxtag_2026:main"
 EOF
 
 cat << EOF > linuxtag/debian/links
-/opt/venvs/linuxtag/bin/linuxtag_2025 usr/bin/linuxtag
+/opt/venvs/linuxtag/bin/linuxtag_2026 usr/bin/linuxtag
 EOF
 
 cat << EOF > linuxtag/debian/control
