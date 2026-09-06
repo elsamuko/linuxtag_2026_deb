@@ -88,4 +88,4 @@ EOF
 )
 
 dpkg-deb --info linuxtag*.deb
-dpkg-deb --contents linuxtag*.deb
+# dpkg-deb --contents linuxtag*.deb
