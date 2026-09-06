@@ -14,7 +14,9 @@ case "$1" in
         deb-systemd-helper enable linuxtag.service
 
         echo "Starting service"
-        deb-systemd-helper start linuxtag.service
+        if [ -d /run/systemd/system ]; then
+            deb-systemd-invoke start linuxtag.service || systemctl start linuxtag.service
+        fi
         ;;
 
     abort-upgrade | abort-remove | abort-deconfigure) ;;

@@ -18,6 +18,7 @@ cp linuxtag.service linuxtag-2026/usr/share/linuxtag/linuxtag.service
 
 cp postinst linuxtag-2026/DEBIAN/postinst
 cp prerm linuxtag-2026/DEBIAN/prerm
+cp postrm linuxtag-2026/DEBIAN/postrm
 
 cat << EOF > linuxtag-2026/usr/share/doc/linuxtag/copyright
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/

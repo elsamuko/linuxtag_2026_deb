@@ -1,20 +1,12 @@
 #!/bin/bash
-
 set -e
 
 case "$1" in
     remove)
         echo "Stopping service"
-        deb-systemd-helper stop linuxtag.service
-
-        echo "Disabling service"
-        deb-systemd-helper disable linuxtag.service
-
-        echo "Removing service"
-        rm /usr/lib/systemd/system/linuxtag.service
-
-        echo "Reloading services"
-        systemctl daemon-reload
+        if [ -d /run/systemd/system ]; then
+            deb-systemd-invoke stop linuxtag.service || true
+        fi
         ;;
 
     upgrade | deconfigure | failed-upgrade) ;;

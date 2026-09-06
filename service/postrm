@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+
+case "$1" in
+    remove)
+        echo "Disabling service"
+        deb-systemd-helper disable linuxtag.service || true
+
+        echo "Removing service"
+        rm -f /usr/lib/systemd/system/linuxtag.service || true
+
+        echo "Reloading systemd"
+        systemctl daemon-reload || true
+        ;;
+
+    purge)
+        echo "Purging systemd helper state"
+        deb-systemd-helper purge linuxtag.service || true
+        ;;
+
+    upgrade | failed-upgrade | abort-install | abort-upgrade) ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
